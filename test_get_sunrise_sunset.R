@@ -1,11 +1,11 @@
 # Sunrise and sunset
 
-# NOTE: need to connect to VPN to call this RData file
+# NOTE: need to connect to VPN to call this RData file. Eventually if people load this as an R package, this step will not be necessary.
 load("G:/ALEUTIAN/AI 2020/Files for boats/sunrise sunset/.RData")
 
 get.todays.date()
 
-# This file contains my edits
+# Load the function
 source(here::here("get_sunrise_sunset.R"))
 
 # Test the function
