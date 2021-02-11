@@ -2,6 +2,7 @@
 
 ## Functions I've worked on so far:
 `get.sunrise.sunset()`
+`pick.date()` (don't know what distinguishes this from the `get.sunrise.sunset()` function)
 
 ## Code files for the GOA survey planning and execution.
 
