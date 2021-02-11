@@ -1,4 +1,8 @@
 # filesforboats
+
+## Functions I've worked on so far:
+`get.sunrise.sunset()`
+
 ## Code files for the GOA survey planning and execution.
 
 This repository contains code that I (Megsie) have been testing and adjusting. It is mainly to keep track of changes for version control. These are R code files that would be found on G:/ALEUTIAN/AI 2020/Files for boats/~. 
