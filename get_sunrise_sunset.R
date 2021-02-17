@@ -1,19 +1,19 @@
 #' Get sunrise/sunset
 #'
 #' @param chosen.date Date, formatted as YYYY-MM-DD
-#' @param latitude Numeric latitude in either decimal degrees (if `ddm = TRUE`) or a character latitude in degrees and decimal minutes (if `ddm = FALSE`)
-#' @param longitude Numeric longitude in either decimal degrees (if `ddm = TRUE`) or a character longitude in degrees and decimal minutes (if `ddm = FALSE`)
-#' @param ddm Logical indicating whether you want to format the date in degrees decimal minutes or not 
+#' @param latitude Numeric latitude in either decimal degrees or a character latitude in degrees and decimal minutes
+#' @param longitude Numeric longitude in either decimal degrees or a character longitude in degrees and decimal minutes
 #'
 #' @return Time of sunrise and sunset in text. Also shows a pop-up with sunrise and sunset times.
 #' @export
 #'
 #' @examples
-get.sunrise.sunset <- function(chosen.date, latitude, longitude, ddm = FALSE) {
-  # Are lat/long in degrees and decimal mins? convert to
-  if (ddm) {
+get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
+  # Are lat/long in degrees and decimal mins? If so, convert to decimal degrees.
+  ddm <- is.character(latitude) | is.character(longitude)
+   if (ddm) {
     if (!grepl(" ", x = latitude) | !grepl(" ", x = longitude) ) {
-      stop("You have chosen degrees and decimal minutes but have no space in the character string you entered. Please format your lat and/or long as D mm.m")
+      stop("You have chosen degrees and decimal minutes but have no space in the character string you entered. Please format your lat and/or long as D mm.m OR enter a numeric value for decimal degrees")
     }
     lat_deg <- as.numeric(gsub(" .*$", "", latitude))
     lat_min <- as.numeric(gsub("^\\S+\\s+", "", latitude)) / 60
