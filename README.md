@@ -1,13 +1,25 @@
 # filesforboats
 
-## Functions I've worked on so far:
-`get.sunrise.sunset()`
+## Functions I've worked on so far
 
-`pick.date()` (don't know what distinguishes this from the `get.sunrise.sunset()` function)
+| Function           | Status |
+| -------------    |:-------------|
+|`get.sunrise.sunset()` | New Siple version has replaced old version  |
+|`sunrise.sunset.times()`| I think this is deprecated |
+|`pick.date()`| I think this is deprecated  |
+|`get.todays.date()`| Unchanged |
 
-## Code files for the GOA survey planning and execution.
+***
 
-This repository contains code that I (Megsie) have been testing and adjusting. It is mainly to keep track of changes for version control. These are R code files that would be found on G:/ALEUTIAN/AI 2020/Files for boats/~. 
+## Code files for the GOA survey planning and execution
+
+This repository contains code that I have been testing and adjusting. It is mainly to keep track of changes for version control. These are R code files that would be found on G:/GOA/GOA 2021/Files for boats/. 
+
+Note: Once I am done working on these, the files should be located in two directories:
+
+> G:/GOA/GOA 2021/Files for boats/sunrise sunset
+
+> G:/GOA/R/sunrise sunset/
 
 ## Changes made to all functions
 I made some changes to better document all the functions I have worked on:
@@ -26,6 +38,8 @@ All the changes above, plus:
 * changed pop up windows so they work in RStudio (not base R)
 
 * Added a text output that prints in console even after the user has seen the pop-up window.
+
+* Added an option where the user can put in degrees and decimal minutes instead of decimal degrees (the default). They just have to put them in quotes with a space separating the degrees and decimal mins (e.g., `latitude = "47 36.3726"`)
 
 
 
