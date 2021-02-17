@@ -12,6 +12,13 @@ source(here::here("get_sunrise_sunset.R"))
 get.sunrise.sunset(
   chosen.date = get.todays.date(),
   latitude = 47.60621, # Seattle
-  longitude = -122.33207
+  longitude = -122.33207, 
+  ddm = FALSE # this is the default
 )
 
+get.sunrise.sunset(
+  chosen.date = get.todays.date(),
+  latitude = "47 36.3726", # Seattle
+  longitude = "-122 19.9242",
+  ddm = TRUE
+)

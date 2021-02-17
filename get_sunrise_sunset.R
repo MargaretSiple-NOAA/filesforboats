@@ -1,6 +1,29 @@
-get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
-  # latitude <- latitude %/% 100 + (latitude %% 100) / 60
-  # longitude <- sign(longitude) * (abs(longitude) %/% 100 + (abs(longitude) %% 100) / 60)
+#' Get sunrise/sunset
+#'
+#' @param chosen.date Date, formatted as YYYY-MM-DD
+#' @param latitude Numeric latitude in either decimal degrees (if `ddm = TRUE`) or a character latitude in degrees and decimal minutes (if `ddm = FALSE`)
+#' @param longitude Numeric longitude in either decimal degrees (if `ddm = TRUE`) or a character longitude in degrees and decimal minutes (if `ddm = FALSE`)
+#' @param ddm Logical indicating whether you want to format the date in degrees decimal minutes or not 
+#'
+#' @return Time of sunrise and sunset in text. Also shows a pop-up with sunrise and sunset times.
+#' @export
+#'
+#' @examples
+get.sunrise.sunset <- function(chosen.date, latitude, longitude, ddm = FALSE) {
+  # Are lat/long in degrees and decimal mins? convert to
+  if (ddm) {
+    if (!grepl(" ", x = latitude) | !grepl(" ", x = longitude) ) {
+      stop("You have chosen degrees and decimal minutes but have no space in the character string you entered. Please format your lat and/or long as D mm.m")
+    }
+    lat_deg <- as.numeric(gsub(" .*$", "", latitude))
+    lat_min <- as.numeric(gsub("^\\S+\\s+", "", latitude)) / 60
+    latitude <- lat_deg + lat_min
+    
+    lon_deg <- as.numeric(gsub(" .*$", "", longitude))
+    lon_min <- as.numeric(gsub("^\\S+\\s+", "", longitude)) / 60
+    longitude <- lon_deg + lon_min
+  }
+
   sunrise <- maptools::sunriset(
     sp::SpatialPoints(
       matrix(c(longitude, latitude),
@@ -23,12 +46,18 @@ get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
     direction = "sunset",
     POSIXct.out = T
   )$time
-  #browser()
-  
-  rstudioapi::showDialog(title = "",
-                         message = paste("<b>Sunrise</b> is at", sunrise,
-                                         ".  <b>Sunset</b> is at", sunset))
-  
-  message("Sunrise is at ", sunrise,
-              "\n Sunset is at ", sunset)
+  # browser()
+
+  rstudioapi::showDialog(
+    title = "",
+    message = paste(
+      "<b>Sunrise</b> is at", sunrise,
+      ".  <b>Sunset</b> is at", sunset
+    )
+  )
+
+  message(
+    "Sunrise is at ", sunrise,
+    "\n Sunset is at ", sunset
+  )
 }
