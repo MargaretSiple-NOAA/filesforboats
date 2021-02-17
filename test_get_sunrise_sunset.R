@@ -1,6 +1,10 @@
 # Sunrise and sunset
+# Last modified by Megsie Siple, 2/17/21
 
-# NOTE: need to connect to VPN to call this RData file. Eventually if people load this as an R package, this step will not be necessary.
+# **NOTE: need to connect to VPN to call this RData file.** 
+
+# You do NOT need this code to use anything on the boats. This file is just for testing and troubleshooting.
+
 load("G:/GOA/GOA 2021/Files for boats/sunrise sunset/.RData")
 
 get.todays.date()
