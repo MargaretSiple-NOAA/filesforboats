@@ -1,6 +1,6 @@
 # filesforboats
 
-## Functions I've worked on so far
+## Functions I've worked on
 
 | Function           | Status |
 | -------------    |:-------------|
@@ -8,6 +8,14 @@
 |`sunrise.sunset.times()`| I think this is deprecated |
 |`pick.date()`| I think this is deprecated  |
 |`get.todays.date()`| Unchanged |
+
+## Components of .RData file for boats
+
+| Function           | Status |
+| -------------    |:-------------|
+|`split.character.string()`| Used for posix dates |
+|`get.todays.date()`| Unchanged |
+|`get.sunrise.sunset()` | New Siple version has replaced old version  |
 
 ***
 
