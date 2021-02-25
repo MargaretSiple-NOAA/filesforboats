@@ -55,8 +55,8 @@ get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
   rstudioapi::showDialog(
     title = "",
     message = paste(
-      "<b>Sunrise</b> is at", sunrise, "AKST",
-      ".  <b>Sunset</b> is at", sunset, "AKST"
+      "<p> <b>Sunrise</b> is at", sunrise, "AKST </p>",
+      "<p> <b>Sunset</b> is at", sunset, "AKST </p>"
     )
   )
 
