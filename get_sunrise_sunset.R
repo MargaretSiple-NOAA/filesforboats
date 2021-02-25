@@ -11,14 +11,14 @@
 get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
   # Are lat/long in degrees and decimal mins? If so, convert to decimal degrees.
   ddm <- is.character(latitude) | is.character(longitude)
-   if (ddm) {
-    if (!grepl(" ", x = latitude) | !grepl(" ", x = longitude) ) {
+  if (ddm) {
+    if (!grepl(" ", x = latitude) | !grepl(" ", x = longitude)) {
       stop("You have chosen degrees and decimal minutes but have no space in the character string you entered. Please format your lat and/or long as D mm.m OR enter a numeric value for decimal degrees")
     }
     lat_deg <- as.numeric(gsub(" .*$", "", latitude))
     lat_min <- as.numeric(gsub("^\\S+\\s+", "", latitude)) / 60
     latitude <- lat_deg + lat_min
-    
+
     lon_deg <- as.numeric(gsub(" .*$", "", longitude))
     lon_min <- as.numeric(gsub("^\\S+\\s+", "", longitude)) / 60
     longitude <- lon_deg + lon_min
@@ -35,6 +35,7 @@ get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
     direction = "sunrise",
     POSIXct.out = T
   )$time
+
   sunset <- maptools::sunriset(
     sp::SpatialPoints(
       matrix(c(longitude, latitude),
@@ -46,18 +47,21 @@ get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
     direction = "sunset",
     POSIXct.out = T
   )$time
-  # browser()
+
+  # fix time zone to Dutch/Anchorage (AKST)
+  sunrise <- lubridate::with_tz(sunrise, tzone = "US/Alaska")
+  sunset <- lubridate::with_tz(sunset, tzone = "US/Alaska")
 
   rstudioapi::showDialog(
     title = "",
     message = paste(
-      "<b>Sunrise</b> is at", sunrise,
-      ".  <b>Sunset</b> is at", sunset
+      "<b>Sunrise</b> is at", sunrise, "AKST",
+      ".  <b>Sunset</b> is at", sunset, "AKST"
     )
   )
 
   message(
-    "Sunrise is at ", sunrise,
-    "\n Sunset is at ", sunset
+    "Sunrise is at ", sunrise, "AKST",
+    "\n Sunset is at ", sunset, "AKST"
   )
 }
