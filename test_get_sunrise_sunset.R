@@ -23,3 +23,5 @@ get.sunrise.sunset(
   latitude = "47 36.3726", # Seattle
   longitude = "-122 19.9242"
 )
+
+save(split.character.string, get.todays.date, get.sunrise.sunset, file = ".RData")
