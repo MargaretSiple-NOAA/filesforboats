@@ -43,12 +43,12 @@ This code takes latitude and longitude and returns the expected sunrise and suns
 
 All the changes above, plus:
 
-* changed pop up windows so they work in RStudio (not base R)
+* changed pop up windows so they work in RStudio (if the user is running the function from base R, they will just get a printout of the sunrise and sunset times in their console)
 
-* Added a text output that prints in console even after the user has seen the pop-up window.
+* Added a text output that prints in console even after the user has seen the pop-up window
 
 * Added an option where the user can put in degrees and decimal minutes instead of decimal degrees (the default). They just have to put them in quotes with a space separating the degrees and decimal mins (e.g., `latitude = "47 36.3726"`)
 
-
+* Translated the time zone of the output to stay fixed at the time zone in Dutch Harbor, as that is what the boats use while they're out (per Ned)
 
 
