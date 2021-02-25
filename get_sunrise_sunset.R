@@ -51,7 +51,8 @@ get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
   # fix time zone to Dutch/Anchorage (AKST)
   sunrise <- lubridate::with_tz(sunrise, tzone = "US/Alaska")
   sunset <- lubridate::with_tz(sunset, tzone = "US/Alaska")
-
+  
+  if(rstudioapi::isAvailable()){
   rstudioapi::showDialog(
     title = "",
     message = paste(
@@ -59,7 +60,7 @@ get.sunrise.sunset <- function(chosen.date, latitude, longitude) {
       "<p> <b>Sunset</b> is at", sunset, "AKST </p>"
     )
   )
-
+}
   message(
     "Sunrise is at ", sunrise, "AKST",
     "\n Sunset is at ", sunset, "AKST"
