@@ -9,7 +9,7 @@
 |`pick.date()`| I think this is deprecated  |
 |`get.todays.date()`| Unchanged |
 
-## Components of .RData file for boats
+## Included in the .RData file for boats
 
 | Function           | Status |
 | -------------    |:-------------|
