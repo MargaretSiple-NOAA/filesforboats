@@ -10,7 +10,7 @@ load("G:/GOA/GOA 2021/Files for boats/sunrise sunset/.RData")
 get.todays.date()
 
 # Load the function
-source(here::here("get_sunrise_sunset.R"))
+source(here::here("R","get_sunrise_sunset.R"))
 
 # Test the function
 get.sunrise.sunset(
