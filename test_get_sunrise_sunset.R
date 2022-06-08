@@ -5,7 +5,7 @@
 
 # You do NOT need this code to use anything on the boats. This file is just for testing and troubleshooting.
 
-load("G:/GOA/GOA 2021/Files for boats/sunrise sunset/.RData")
+load("G:/ALEUTIAN/AI 2022/Files for Boats/sunrise sunset/2022/.RData")
 
 get.todays.date()
 
