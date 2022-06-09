@@ -10,7 +10,7 @@ load("G:/ALEUTIAN/AI 2022/Files for Boats/sunrise sunset/2022/.RData")
 get.todays.date()
 
 # Load the function
-source(here::here("R","get_sunrise_sunset.R"))
+#source(here::here("R","get_sunrise_sunset.R"))
 
 # Test the function
 get.sunrise.sunset(
